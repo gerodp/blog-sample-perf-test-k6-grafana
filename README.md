@@ -14,7 +14,7 @@ API_URL=http://api_to_test_url TEST=testfile.js make start
 
 The following services will be started:
 
-- k6s: Container that actively listen to changes in TEST file and automatically re-launch them with k6s
+- k6: Container that actively listen to changes in TEST file and automatically re-launch them with k6
 - prometheus: Monitoring backend that will collect the metrics from backend
 - grafana: Monitoring frontend with dashboards to check different metrics
 
@@ -52,9 +52,9 @@ sudo docker run hello-world
 
 # Log out and log in again
 
-git clone git@github.com:gerodp/blog-sample-perf-test-k6s-grafana.git
+git clone git@github.com:gerodp/blog-sample-perf-test-k6-grafana.git
 
-cd blog-sample-perf-test-k6s-grafana
+cd blog-sample-perf-test-k6-grafana
 
 API_URL=http://api_to_test_url TEST=testfile.js make start 
 

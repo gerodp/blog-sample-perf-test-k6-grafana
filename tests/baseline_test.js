@@ -11,7 +11,7 @@ export const options = {
       executor: 'constant-arrival-rate', 
 
       // Our test should last 10 minutes in total
-      duration: '10s',
+      duration: '600s',
 
       // It should start 20 iterations per `timeUnit`. Note that iterations starting points
       // will be evenly spread across the `timeUnit` period.
