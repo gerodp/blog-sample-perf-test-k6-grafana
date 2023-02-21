@@ -48,7 +48,7 @@ export default function(data) {
 
   const token = data.token;
 
-  let resp = http.get(__ENV.SERVICE_URL+"/auth/post",{
+  let resp = http.get(__ENV.SERVICE_URL+"/auth/post?page_size=5",{
     headers: { 
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token,

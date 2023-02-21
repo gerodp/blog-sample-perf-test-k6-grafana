@@ -10,32 +10,29 @@ export const options = {
     read_posts_stress_test: {
       executor: 'ramping-arrival-rate',
 
-      // Our test with at a rate of 100 iterations started per `timeUnit` (e.g minute).
-      startRate: 100,
+      // Our test with at a rate of 50 iterations started per `timeUnit` (e.g minute).
+      startRate: 50,
 
       // It should start `startRate` iterations per second
       timeUnit: '1m',
 
-      // It should preallocate 10 VUs before starting the test.
-      preAllocatedVUs: 100,
+      // It should preallocate 300 VUs before starting the test.
+      preAllocatedVUs: 300,
 
-      // It is allowed to spin up to 300 maximum VUs in order to sustain the defined
+      // It is allowed to spin up to 5000 maximum VUs in order to sustain the defined
       // constant arrival rate.
-      maxVUs: 300,
+      maxVUs: 5000,
 
       stages: [
-        // It should start 1000 iterations per `timeUnit` for the first minute.
-        { target: 6000, duration: '1m' },
-        { target: 6000, duration: '1m' },
-        { target: 7800, duration: '1m' },
-        { target: 7800, duration: '1m' },
-        { target: 9600, duration: '1m' },
-        { target: 9600, duration: '1m' },
-        { target: 12600, duration: '1m' },
-        { target: 12600, duration: '1m' },
-        { target: 14400, duration: '1m' },
-        { target: 14400, duration: '1m' },
-        { target: 6000, duration: '5m' },
+        { target: 25*60, duration: '1m' },
+        { target: 25*60, duration: '2m' },
+        { target: 50*60, duration: '1m' },
+        { target: 50*60, duration: '2m' },
+        { target: 100*60, duration: '1m' },
+        { target: 100*60, duration: '2m' },
+        { target: 150*60, duration: '1m' },
+        { target: 150*60, duration: '2m' },
+        { target: 25*60, duration: '3m' },
       ],
     }
   }
@@ -59,7 +56,7 @@ export default function(data) {
 
   const token = data.token;
 
-  let resp = http.get(__ENV.SERVICE_URL+"/auth/post",{
+  let resp = http.get(__ENV.SERVICE_URL+"/auth/post?page_size=5",{
     headers: { 
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token,
