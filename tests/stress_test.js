@@ -11,7 +11,7 @@ export const options = {
       executor: 'ramping-arrival-rate',
 
       // Our test with at a rate of 50 iterations started per `timeUnit` (e.g minute).
-      startRate: 50,
+      startRate: 25,
 
       // It should start `startRate` iterations per second
       timeUnit: '1m',
