@@ -1,6 +1,6 @@
 # Blog Sample Backend API - Performance Tests
 
-Performance Tests for a sample blog app (https://github.com/gerodp/blog-sample-backend-go-grafana.git) and intended to be used to support the Blog article about performance testing [TODO PASTE URL HERE].
+Performance Tests for a sample blog app (https://github.com/gerodp/blog-sample-backend-go-grafana.git) and intended to be used to support the Blog article about performance testing (https://medium.com/@gerodp_85923/cómo-saber-si-tu-api-soportará-la-carga-pruebas-de-rendimiento-y-carga-para-apis-e8c691db1f4b).
 
 The project was tested succesfully on Mac with M1 Chip and Linux with amd64 architectures.
 
